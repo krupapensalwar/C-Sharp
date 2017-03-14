@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head> Trial 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<select id = "DropdownId1">
+	<option>Select</option>
+	<option>val1 </option>
+	<option>val2 </option>
+	<option>val3 </option>
+	<option>val4 </option>
+</select>
+<br />
+<!-- <select id = "id2">Dropdown2
+	<option>val12 </option>
+	<option>val22 </option>
+	<option>val32 </option>
+	<option>val42 </option>
+</select>
+<br />
+<select id = "id3">Dropdown3
+	<option>val13 </option>
+	<option>val23 </option>
+	<option>val33 </option>
+	<option>val43 </option>
+</select>
+
+<br /> -->
+
+<div></div>
+
+<!-- <table>
+<br />New Dropdowns<br />
+
+</table> -->
+<script>
+
+var count = 0;
+
+$("select").change(function () {
+      //var str = "";
+	  alert("hi");
+		  var temp = "id"+count;
+		  count++;
+				var list = [{"Text":"val1","Value":"val1"},{"Text":"val2","Value":"val2"},{"Text":"val3","Value":"val3"}];
+				createDropDownList(temp,temp,list);
+	  
+	  });
+	  
+     /* $("select option:selected").each(function () {
+            str += $(this).text() + " ";
+			var temp = "id"+count;
+			var list = [{"Text":"val1","Value":"val1"},{"Text":"val2","Value":"val2"},{"Text":"val3","Value":"val3"}];
+			createDropDownList(temp,temp,list);
+          });
+      $("div").text(str);
+    })
+    .trigger('change');
+	*/
+	
+function createDropDownList(name, id, optionList) {
+            var combo = $("<select></select>").attr("id", id).attr("name", name);
+            //alert("entered func");
+            //console.log(optionList);
+            $.each(optionList, function (i, fieldValues) {
+                combo.append("<option value='" + fieldValues.Value + "'>" + fieldValues.Text + "</option>");
+                //console.log(fieldValues.Value + " " + fieldValues.Text);
+            });
+
+            $("div").append(combo);
+        }
+</script>
+</body>
+</html>
